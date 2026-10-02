@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Asjad Ahmad // Digital Identity - Futuristic Matrix-Inspired Terminal & Bio-System for TechnoJam 2026 VibeCoding Challenge">
+  <meta name="theme-color" content="#050805">
+  <title>ASJAD AHMAD // DIGITAL IDENTITY [MATRIX SYSTEM]</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Matrix Rain Canvas -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <!-- CRT Scanline & Phosphor Overlay -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- Matrix Transition Curtain Effect -->
+  <div id="matrix-curtain" class="matrix-curtain" aria-hidden="true"></div>
+
+  <!-- ========================================== -->
+  <!-- 0. TOP COMPACT CYBER NAVIGATION            -->
+  <!-- ========================================== -->
+  <nav class="cyber-navbar" aria-label="System Navigation">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand" title="Return to Core Node">
+        <span class="brand-code">&gt;&gt;</span>
+        <span class="brand-name">ASJAD AHMAD</span>
+        <span class="brand-sub">// SYS</span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#home" class="nav-item">[ HOME ]</a>
+        <a href="#about" class="nav-item">[ ABOUT ]</a>
+        <a href="#skills" class="nav-item">[ SKILLS ]</a>
+        <a href="#projects" class="nav-item">[ PROJECTS ]</a>
+        <a href="#terminal" class="nav-item highlight">[ TERMINAL ]</a>
+      </div>
+
+      <div class="nav-controls">
+        <button id="sound-toggle" class="sound-btn" type="button" aria-label="Toggle terminal audio effects" title="Toggle cyber audio effects">
+          <span class="sound-icon">🔈</span>
+          <span class="sound-text">SOUND: OFF</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================== -->
+  <!-- 1. BOOT SEQUENCE SCREEN                    -->
+  <!-- ========================================== -->
+  <section id="boot-screen" class="boot-overlay" aria-label="System Boot Sequence">
+    <div class="boot-container">
+      <div class="boot-header">
+        <div class="window-dots">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+        </div>
+        <span class="boot-title">MATRIX_CORE // BOOTLOADER v3.2 [SECURE]</span>
+      </div>
+
+      <div class="boot-terminal-body">
+        <div class="boot-badge">[ SYSTEM BOOT ]</div>
+        <div id="boot-log" class="boot-log" aria-live="polite">
+          <!-- Diagnostics injected dynamically via script.js -->
+        </div>
+
+        <div id="boot-hero-card" class="boot-hero-card hidden">
+          <div class="boot-hero-divider"></div>
+          <h2 class="boot-hero-name">ASJAD AHMAD</h2>
+          <div class="boot-hero-sub">// DIGITAL IDENTITY</div>
+          <div class="boot-hero-meta">
+            <span>1ST YEAR BCA STUDENT</span>
+            <span class="bull">&bull;</span>
+            <span>GALGOTIAS UNIVERSITY</span>
+          </div>
+          <div class="boot-hero-motto">"Learning. Building. Improving."</div>
+        </div>
+      </div>
+
+      <div class="boot-actions">
+        <button id="btn-skip-boot" class="cyber-btn sm" type="button">
+          [ SKIP BOOT ]
+        </button>
+        <button id="btn-enter-system" class="cyber-btn primary hidden" type="button">
+          [ ENTER SYSTEM ]
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 2. MAIN SYSTEM INTERFACE                   -->
+  <!-- ========================================== -->
+  <main id="main-system" class="main-container hidden">
+
+    <!-- HERO SECTION / MAIN DISPLAY (#home) -->
+    <header id="home" class="hero-panel" aria-label="Main Hero Display">
+      <div class="panel-header-bar">
+        <div class="status-indicator-badge" id="status-badge" role="button" tabindex="0" title="System Node (Hint: clicking multiple times might unlock something...)" aria-label="Status Online. Clickable Node.">
+          <span class="pulsing-dot"></span>
+          <span class="status-text">STATUS: <strong class="neon-text">ONLINE</strong> ●</span>
+        </div>
+        <div class="system-code">NODE: GU-BCA-2026 // CORE-SYS</div>
+      </div>
+
+      <div class="hero-body">
+        <div class="hero-avatar-box" id="avatar-egg-trigger" title="Asjad's Cyber Identity Node [Click me]">
+          <div class="avatar-matrix-symbol">[AA]</div>
+        </div>
+
+        <div class="hero-text-block">
+          <div class="system-notice">&gt; DIGITAL IDENTITY VERIFIED.</div>
+          <h1 class="hero-display-name glitch-hover" data-text="ASJAD AHMAD">
+            ASJAD AHMAD
+          </h1>
+          <div class="hero-display-sub">
+            <span class="slash-prefix">//</span> DIGITAL IDENTITY
+          </div>
+          <div class="hero-academic-tag">
+            <span>BCA STUDENT</span>
+            <span class="divider">&bull;</span>
+            <span>GALGOTIAS UNIVERSITY</span>
+          </div>
+          <div class="hero-motto">
+            LEARNING &bull; BUILDING &bull; IMPROVING
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Jump Buttons -->
+      <div class="hero-actions-bar" aria-label="Quick Navigation Controls">
+        <a href="#about" class="cyber-btn sm">&gt; [ ABOUT ]</a>
+        <a href="#skills" class="cyber-btn sm">&gt; [ SKILLS ]</a>
+        <a href="#projects" class="cyber-btn sm">&gt; [ PROJECTS ]</a>
+        <a href="#terminal" class="cyber-btn sm primary">&gt; [ TERMINAL ]</a>
+        <button class="cyber-btn sm danger" data-cmd="hack" type="button">&gt; [ HACK SYSTEM ]</button>
+        <button class="cyber-btn sm highlight" id="hero-quote-btn" type="button">&gt; [ RANDOM QUOTE ]</button>
+      </div>
+    </header>
+
+    <!-- ABOUT ME & PROFILE STATUS SECTION (#about) -->
+    <section id="about" class="section-container" aria-label="About Me and Identity Status">
+      <div class="section-banner">
+        <span class="banner-title">// 01 &mdash; PROFILE & IDENTITY</span>
+        <span class="banner-id">SYS_MEM_01</span>
+      </div>
+
+      <div class="about-grid">
+        <!-- About Narrative Terminal Box -->
+        <article class="cyber-card about-narrative-card">
+          <div class="card-bar">
+            <span class="card-bar-title">PROFILE_DATA // ABOUT ME</span>
+            <span class="card-bar-badge">VERIFIED</span>
+          </div>
+          <div class="card-content">
+            <h2 class="sub-heading">ABOUT ME</h2>
+            <p class="narrative-p">
+              Hi, I'm <strong>Asjad Ahmad</strong>, a 1st-year BCA student at <strong>Galgotias University</strong>.
+            </p>
+            <p class="narrative-p">
+              I'm interested in coding, technology, problem solving, and video editing. I'm currently learning programming and exploring different areas of computer science.
+            </p>
+            <p class="narrative-p">
+              I enjoy experimenting with new ideas, building small projects, and learning through hands-on experience.
+            </p>
+
+            <div class="mission-box">
+              <span class="mission-label">CURRENT MISSION:</span>
+              <span class="mission-val neon-text">LEARN &rarr; BUILD &rarr; IMPROVE</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- System Profile / Identity HUD -->
+        <aside class="cyber-card identity-hud-card" aria-label="Identity Parameters">
+          <div class="card-bar">
+            <span class="card-bar-title">IDENTITY // STATUS REGISTRY</span>
+            <span class="card-bar-badge">ACTIVE</span>
+          </div>
+          <div class="card-content identity-specs">
+            <h2 class="sub-heading">IDENTITY</h2>
+
+            <div class="spec-row">
+              <span class="spec-key">NAME:</span>
+              <span class="spec-val highlight">ASJAD AHMAD</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">ROLE:</span>
+              <span class="spec-val">BCA STUDENT</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">UNIVERSITY:</span>
+              <span class="spec-val">GALGOTIAS UNIVERSITY</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">MODE:</span>
+              <span class="spec-val neon-text">LEARNING</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">STATUS:</span>
+              <span class="spec-val online-pulse">ONLINE ●</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">MISSION:</span>
+              <span class="spec-val highlight">BUILD + IMPROVE</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CURRENTLY LEARNING SECTION (#skills) -->
+    <section id="skills" class="section-container" aria-label="Currently Learning Skills">
+      <div class="section-banner">
+        <span class="banner-title">// 02 &mdash; CURRENTLY LEARNING</span>
+        <span class="banner-id">SKILL STATUS: IN PROGRESS</span>
+      </div>
+
+      <div class="skills-grid">
+        <!-- 01 C -->
+        <div class="skill-tile">
+          <div class="skill-top">
+            <span class="skill-index">01</span>
+            <span class="skill-state">IN PROGRESS</span>
+          </div>
+          <h3 class="skill-title">C</h3>
+          <p class="skill-description">Programming fundamentals and problem solving.</p>
+        </div>
+
+        <!-- 02 Python -->
+        <div class="skill-tile">
+          <div class="skill-top">
+            <span class="skill-index">02</span>
+            <span class="skill-state">IN PROGRESS</span>
+          </div>
+          <h3 class="skill-title">PYTHON</h3>
+          <p class="skill-description">Learning programming concepts and practical coding.</p>
+        </div>
+
+        <!-- 03 HTML / CSS -->
+        <div class="skill-tile">
+          <div class="skill-top">
+            <span class="skill-index">03</span>
+            <span class="skill-state">IN PROGRESS</span>
+          </div>
+          <h3 class="skill-title">HTML / CSS</h3>
+          <p class="skill-description">Understanding how interfaces and websites are structured and styled.</p>
+        </div>
+
+        <!-- 04 JavaScript -->
+        <div class="skill-tile">
+          <div class="skill-top">
+            <span class="skill-index">04</span>
+            <span class="skill-state">IN PROGRESS</span>
+          </div>
+          <h3 class="skill-title">JAVASCRIPT</h3>
+          <p class="skill-description">Exploring interactivity and browser-based programming.</p>
+        </div>
+
+        <!-- 05 Git / GitHub -->
+        <div class="skill-tile">
+          <div class="skill-top">
+            <span class="skill-index">05</span>
+            <span class="skill-state">IN PROGRESS</span>
+          </div>
+          <h3 class="skill-title">GIT / GITHUB</h3>
+          <p class="skill-description">Learning version control and project management.</p>
+        </div>
+
+        <!-- 06 Computer Science -->
+        <div class="skill-tile">
+          <div class="skill-top">
+            <span class="skill-index">06</span>
+            <span class="skill-state">IN PROGRESS</span>
+          </div>
+          <h3 class="skill-title">COMPUTER SCIENCE</h3>
+          <p class="skill-description">Exploring core concepts, programming fundamentals and problem solving.</p>
+        </div>
+
+        <!-- 07 Video Editing -->
+        <div class="skill-tile">
+          <div class="skill-top">
+            <span class="skill-index">07</span>
+            <span class="skill-state">IN PROGRESS</span>
+          </div>
+          <h3 class="skill-title">VIDEO EDITING</h3>
+          <p class="skill-description">Creative editing and digital content creation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT LOG SECTION (#projects) -->
+    <section id="projects" class="section-container" aria-label="Project Log">
+      <div class="section-banner">
+        <span class="banner-title">// 03 &mdash; PROJECT LOG</span>
+        <span class="banner-id">REGISTRY_ACTIVE</span>
+      </div>
+
+      <div class="project-logs-grid">
+        <!-- PROJECT 01 -->
+        <article class="project-entry-card">
+          <div class="project-card-header">
+            <div class="project-num">PROJECT 01</div>
+            <div class="project-status-tag active">STATUS: ACTIVE</div>
+          </div>
+          <h3 class="project-headline">ASJAD AHMAD // DIGITAL IDENTITY</h3>
+          <p class="project-summary">
+            A Matrix-inspired interactive digital identity created for the TechnoJam VibeCoding challenge.
+          </p>
+          <div class="project-meta-box">
+            <span class="meta-label">TECH:</span>
+            <span class="meta-val">HTML &bull; CSS &bull; JAVASCRIPT</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 02 -->
+        <article class="project-entry-card">
+          <div class="project-card-header">
+            <div class="project-num">PROJECT 02</div>
+            <div class="project-status-tag learning">STATUS: LEARNING</div>
+          </div>
+          <h3 class="project-headline">WEB EXPERIMENTS</h3>
+          <p class="project-summary">
+            Small experiments created while learning frontend concepts, UI interactions and JavaScript.
+          </p>
+          <div class="project-meta-box">
+            <span class="meta-label">TECH:</span>
+            <span class="meta-val">HTML &bull; CSS &bull; JAVASCRIPT</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 03 -->
+        <article class="project-entry-card">
+          <div class="project-card-header">
+            <div class="project-num">PROJECT 03</div>
+            <div class="project-status-tag progress">STATUS: IN PROGRESS</div>
+          </div>
+          <h3 class="project-headline">CODING PRACTICE</h3>
+          <p class="project-summary">
+            Programming exercises and problem-solving practice while building a foundation in computer science.
+          </p>
+          <div class="project-meta-box">
+            <span class="meta-label">TECH:</span>
+            <span class="meta-val">C &bull; PYTHON</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 04 -->
+        <article class="project-entry-card">
+          <div class="project-card-header">
+            <div class="project-num">PROJECT 04</div>
+            <div class="project-status-tag ongoing">STATUS: ONGOING</div>
+          </div>
+          <h3 class="project-headline">CREATIVE WORK</h3>
+          <p class="project-summary">
+            Video editing and creative digital experiments.
+          </p>
+          <div class="project-meta-box">
+            <span class="meta-label">TECH:</span>
+            <span class="meta-val">VIDEO EDITING</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- RANDOM SYSTEM MESSAGE / DEVELOPER HUMOR WIDGET -->
+    <section class="quote-section" aria-label="Random Developer Quotes">
+      <div class="quote-card">
+        <div class="quote-header">
+          <span class="quote-prefix">&gt; RANDOM SYSTEM MESSAGE</span>
+          <span class="quote-sub">// CHAOTIC_DEVELOPER_HUMOR</span>
+        </div>
+        <div class="quote-display" id="quote-display-area" aria-live="polite">
+          <p class="quote-text" id="quote-text">"One bug fixed. Three new ones spawned."</p>
+        </div>
+        <div class="quote-action">
+          <button id="btn-next-quote" class="cyber-btn highlight sm" type="button">
+            [ NEW QUOTE ]
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE TERMINAL (#terminal) -->
+    <section id="terminal" class="terminal-panel" aria-label="Interactive Terminal">
+      <!-- Terminal Header Bar -->
+      <div class="terminal-bar">
+        <div class="window-controls">
+          <span class="terminal-dot red" title="Close"></span>
+          <span class="terminal-dot yellow" title="Minimize"></span>
+          <span class="terminal-dot green" title="Maximize"></span>
+        </div>
+        <div class="terminal-title">ASJAD@DIGITAL-ID: ~ (bash)</div>
+        <div class="terminal-session">PORT: 2026 &bull; SECURE_TTY</div>
+      </div>
+
+      <!-- Quick Command Buttons Toolbar -->
+      <div class="terminal-quick-bar" aria-label="Executable Commands Toolbar">
+        <button class="terminal-chip" data-cmd="whoami" type="button">[ whoami ]</button>
+        <button class="terminal-chip" data-cmd="about" type="button">[ about ]</button>
+        <button class="terminal-chip" data-cmd="skills" type="button">[ skills ]</button>
+        <button class="terminal-chip" data-cmd="projects" type="button">[ projects ]</button>
+        <button class="terminal-chip" data-cmd="status" type="button">[ status ]</button>
+        <button class="terminal-chip" data-cmd="joke" type="button">[ joke ]</button>
+        <button class="terminal-chip" data-cmd="date" type="button">[ date ]</button>
+        <button class="terminal-chip danger" data-cmd="hack" type="button">[ hack ]</button>
+        <button class="terminal-chip" data-cmd="clear" type="button">[ clear ]</button>
+      </div>
+
+      <!-- Terminal Body / Output Scroll Area -->
+      <div id="terminal-screen" class="terminal-screen" tabindex="0" role="region" aria-label="Terminal History and Output">
+        <div id="terminal-history" class="terminal-history">
+          <!-- Welcome and executed command entries appear here -->
+        </div>
+
+        <!-- Terminal Active Input Line -->
+        <div class="terminal-input-line">
+          <span class="terminal-prompt" id="terminal-prompt">ASJAD@DIGITAL-ID:~$</span>
+          <div class="input-wrapper">
+            <input 
+              type="text" 
+              id="terminal-input" 
+              class="terminal-input" 
+              autocomplete="off" 
+              autocorrect="off" 
+              autocapitalize="off" 
+              spellcheck="false" 
+              aria-label="Terminal command prompt" 
+              placeholder="Type 'help' or click a command..."
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal Footer Hints -->
+      <div class="terminal-footer-hint">
+        <span>TIP: Try <kbd>whoami</kbd>, <kbd>skills</kbd>, <kbd>date</kbd>, <kbd>hack</kbd>, or secret command <kbd>sudo hire asjad</kbd>.</span>
+        <span class="history-hint">History: <kbd>&uarr;</kbd> <kbd>&darr;</kbd></span>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="system-footer">
+      <div class="footer-left">
+        <div class="footer-status">SYSTEM ONLINE ●</div>
+        <div class="footer-brand">
+          <strong>ASJAD AHMAD</strong><br>
+          <span class="muted">// DIGITAL IDENTITY</span>
+        </div>
+      </div>
+
+      <div class="footer-center">
+        <p class="footer-quote">"Built while learning. Powered by curiosity."</p>
+        <p class="footer-copy">&copy; 2026 ASJAD AHMAD</p>
+      </div>
+
+      <div class="footer-right">
+        <!-- Secret Easter Egg Glyph -->
+        <button id="secret-glyph-btn" class="glyph-btn" title="Classified system node [Click to test]" aria-label="Secret matrix node">
+          [&lambda;]
+        </button>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- 3. EASTER EGG MODAL WINDOW                 -->
+  <!-- ========================================== -->
+  <aside id="easter-egg-modal" class="easter-egg-modal hidden" role="dialog" aria-modal="true" aria-labelledby="egg-title">
+    <div class="easter-egg-box">
+      <div class="egg-terminal-bar">
+        <span>MATRIX_OVERRIDE // CLASSIFIED.EXE</span>
+        <button id="egg-close-btn" class="egg-close" aria-label="Close secret window">&times;</button>
+      </div>
+      <div class="egg-content">
+        <pre class="egg-ascii">
+╔════════════════════════════╗
+       SECRET MODE
+         ACTIVATED
+╚════════════════════════════╝
+        </pre>
+        <div class="egg-aura-pill">+100 AURA</div>
+        <p class="egg-quote">
+          "You found something that wasn't in the documentation."
+        </p>
+        <p class="egg-details">
+          &gt; Matrix flux overclocked.<br>
+          &gt; Developer motivation restored.<br>
+          &gt; Golden stream anomaly detected.
+        </p>
+        <button id="egg-dismiss-btn" class="cyber-btn primary">
+          [ CLAIM AURA & RESUME ]
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
