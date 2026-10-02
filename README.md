@@ -1,13 +1,13 @@
 # ASJAD AHMAD // DIGITAL IDENTITY
 
-> **TechnoJam 2026 — VibeCoding Challenge (Easy Level)**  
+> **TechnoJam 2026 — VibeCoding Project **  
 > **Concept:** Matrix-Inspired Aesthetic Terminal / Bio-Card
 
 ---
 
 ## 🚀 Overview
 
-**ASJAD AHMAD // DIGITAL IDENTITY** is a futuristic, Matrix-inspired digital identity system and interactive developer terminal created for the **TechnoJam 2026 VibeCoding challenge**. 
+**ASJAD AHMAD // DIGITAL IDENTITY** is a futuristic, Matrix-inspired digital identity system and interactive developer terminal created for the **TechnoJam 2026 VibeCoding project**. 
 
 Instead of a generic template, this project immerses the visitor in a cohesive cyber interface containing Asjad Ahmad's digital identity. Visitors experience an authentic green-code Matrix rain animation with variable drop speeds, a cinematic bootloader sequence, a comprehensive identity HUD, learning project logs, chaotic developer humor, and a fully interactive bash-style terminal supporting commands, command history, and hidden Easter eggs.
 
@@ -15,7 +15,7 @@ Instead of a generic template, this project immerses the visitor in a cohesive c
 
 ## 🎯 Challenge Requirements Satisfied
 
-This project directly implements the **Easy-Level Challenge** of TechnoJam 2026:
+This project directly implements the **Easy-Level Project** of TechnoJam 2026:
 > *"Matrix-Inspired Aesthetic Terminal / Bio-Card"*
 
 ### Core Deliverables:
@@ -94,8 +94,7 @@ ASJAD-DIGITAL-IDENTITY/
 └── screenshots/        # Project preview screenshots
     ├── .gitkeep
     ├── desktop.png     # (Placeholder for desktop view)
-    ├── terminal.png    # (Placeholder for terminal commands)
-    ├── mobile.png      # (Placeholder for mobile responsive layout)
+    ├── terminal.png    # (Placeholder for terminal commands)    
     └── easter_egg.png  # (Placeholder for secret mode)
 ```
 
@@ -117,4 +116,4 @@ ASJAD-DIGITAL-IDENTITY/
 - **University:** Galgotias University
 - **Interests:** Coding, Technology, Web Development, Video Editing
 - **Mission:** LEARN &bull; BUILD &bull; IMPROVE
-- **Event:** TechnoJam 2026 — VibeCoding Challenge
+- **Event:** TechnoJam 2026 — VibeCoding Project
